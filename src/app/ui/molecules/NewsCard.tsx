@@ -8,7 +8,7 @@ import Link from "next/link";
 export default async function NewsCard(props: IArticle & { locale: Locale }) {
   return (
     <div className="grid grid-cols-2 gap-8">
-      <Link href={`${props.locale}/articles/${props.attributes.slug}`}>
+      <Link href={`/${props.locale}/articles/${props.attributes.slug}`}>
         {props.attributes.Cover?.data ? (
           <Image
             className="object-cover"
@@ -23,7 +23,7 @@ export default async function NewsCard(props: IArticle & { locale: Locale }) {
       </Link>
       <div>
         <Link
-          href={`${props.locale}/articles/${props.attributes.slug}`}
+          href={`/${props.locale}/articles/${props.attributes.slug}`}
           className="text-lg font-medium leading-6 mb-2 hover:underline"
         >
           {props.attributes.Title}
