@@ -1,10 +1,7 @@
 import { Page } from "@/types";
 import { getArticles } from "@/api/articles";
-import { getImagePath } from "@/helpers/getImagePath";
 import { translate } from "@/helpers/translate";
 
-import Link from "next/link";
-import Image from "next/image";
 import NewsCard from "@/app/ui/molecules/NewsCard";
 
 export default async function Articles(page: Page) {
