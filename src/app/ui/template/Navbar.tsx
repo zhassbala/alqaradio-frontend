@@ -3,10 +3,14 @@ import Link from "next/link";
 import { Locale } from "@/types";
 import { translate } from "@/helpers/translate";
 
-export default function Navbar(params: { locale: Locale }) {
-  const { locale } = params;
+interface Props {
+  locale: Locale;
+  className?: string;
+}
+
+export default function Navbar({ locale, className = "" }: Props) {
   return (
-    <ul className="grow flex gap-4 items-center justify-start">
+    <ul className={`grow flex gap-4 items-center justify-start ${className}`}>
       <li>
         <Link href={`/${locale}/`}>{translate("mainpage", locale)}</Link>
       </li>
