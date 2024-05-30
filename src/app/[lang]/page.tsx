@@ -8,7 +8,7 @@ import logo from "@/assets/img/logo.png";
 
 export default function Home({ params }: Page) {
   return (
-    <div className="flex flex-col md:flex-row md:gap-8 justify-center items-center">
+    <div className="flex flex-col md:flex-row md:gap-8 justify-center items-center px-2">
       <div className="w-[300px] h-[300px] md:w-[400px] md:h-[400px] shrink-0 relative">
         <Image
           src={logo}

@@ -11,7 +11,7 @@ export default async function NewsCard(props: IArticle & { locale: Locale }) {
       <Link href={`/${props.locale}/articles/${props.attributes.slug}`}>
         {props.attributes.Cover?.data ? (
           <Image
-            className="object-cover"
+            className="object-cover w-full h-full"
             width={props.attributes.Cover.data.attributes.width}
             height={props.attributes.Cover.data.attributes.height}
             src={getImagePath(props.attributes.Cover.data.attributes.url)}
@@ -28,9 +28,7 @@ export default async function NewsCard(props: IArticle & { locale: Locale }) {
         >
           {props.attributes.Title}
         </Link>
-        <p className="text-[grey] text-sm">
-          {formatDate(props.attributes.publishedAt)}
-        </p>
+        <p className="text-[grey] text-sm">{formatDate(props.attributes.Date)}</p>
       </div>
     </div>
   );

@@ -22,5 +22,9 @@
   "media_about_us": {
     "en": "Media about us",
     "kk": "БАҚ БІЗ ТУРАЛЫ"
+  },
+  "no_news": {
+    "en": "There are no news",
+    "kk": "Жаңалық жоқ"
   }
 }
