@@ -18,14 +18,10 @@ export default function Navbar({ locale, className = "" }: Props) {
         <Link href={`/${locale}/about`}>{translate("about", locale)}</Link>
       </li>
       <li>
-        <Link href={`/${locale}/about/media`}>
-          {translate("media_about_us", locale)}
-        </Link>
+        <Link href={`/${locale}/about/media`}>{translate("media_about_us", locale)}</Link>
       </li>
       <li>
-        <Link href={`/${locale}/products`}>
-          {translate("products", locale)}
-        </Link>
+        <Link href={`/${locale}/products`}>{translate("products", locale)}</Link>
       </li>
       <li>
         <Link href={`/${locale}/articles`}>{translate("news", locale)}</Link>

@@ -9,14 +9,10 @@ export default async function AboutUsMedia() {
     return <NotFound></NotFound>;
   }
   return (
-    <div className="max-w-[1280px]">
-      <h1 className="text-3xl font-semibold mb-8">
-        {content.attributes.Title}
-      </h1>
+    <div className="max-w-[1280px] px-4 py-8">
+      <h1 className="text-3xl font-semibold mb-8">{content.attributes.Title}</h1>
       <div>
-        <BlocksRenderer
-          content={content.attributes.Content ?? []}
-        ></BlocksRenderer>
+        <BlocksRenderer content={content.attributes.Content ?? []}></BlocksRenderer>
       </div>
     </div>
   );

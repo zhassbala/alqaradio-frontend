@@ -20,7 +20,7 @@ export function middleware(request: NextRequest) {
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   );
 
-  if (pathnameHasLocale) return;
+  if (pathnameHasLocale || pathname.startsWith("/static/")) return;
 
   // // Redirect if there is no locale
   const locale = getLocale(request);

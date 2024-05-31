@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "Radio Azan",
   description: "ALQA RADIOSY-ның сайты",
   icons: {
-    icon: "/icon.png",
+    icon: "/static/icon.svg",
   },
 };
 

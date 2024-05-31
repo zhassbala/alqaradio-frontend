@@ -7,11 +7,13 @@ import NewsCard from "@/app/ui/molecules/NewsCard";
 export default async function Articles(page: Page) {
   const { data: articles } = await getArticles(page.params.lang);
   return (
-    <div className="px-4 mt-4">
-      <h1 className="text-2xl mb-4">{translate("news", page.params.lang)}</h1>
-      <ul className="grid gap-8">
+    <div className="px-4 my-4">
+      <h1 className="text-3xl md:text-4xl font-medium md:font-semibold uppercase mb-8 text-center">
+        {translate("news", page.params.lang)}
+      </h1>
+      <ul className="flex gap-8 flex-wrap justify-center md:justify-start">
         {articles.map((el) => (
-          <NewsCard {...el} locale={page.params.lang} key={el.id}></NewsCard>
+          <NewsCard {...el} locale={page.params.lang} key={el.id} cards></NewsCard>
         ))}
       </ul>
     </div>
