@@ -15,7 +15,10 @@ export interface IResponse<T = Record<string, never>> {
 
 export interface StrapiResponse<T = Record<string, never>> {
   id: number;
-  attributes: T;
+  attributes: T & {
+    createdAt: string;
+    updatedAt: string;
+  };
 }
 
 export type ImageFormat = {
@@ -31,7 +34,7 @@ export type ImageFormat = {
   url: string;
 };
 
-export type ImageObject = StrapiResponse<{
+export type FileObject = StrapiResponse<{
   name: string;
   alternativeText?: string;
   caption?: string;
@@ -43,8 +46,6 @@ export type ImageObject = StrapiResponse<{
   };
   size: number;
   url: string;
-  createdAt: string;
-  updatedAt: string;
 
   hash: string;
   ext: string;
@@ -58,20 +59,24 @@ export type IArticle = StrapiResponse<{
   Title: string;
   Date: string;
   locale: Locale;
-  Cover?: { data: ImageObject };
+  Cover?: { data: FileObject };
   Content?: BlocksContent;
 
   slug: string;
-  createdAt: string;
-  updatedAt: string;
   publishedAt: string;
 }>;
 
 export type IAboutUsPage = StrapiResponse<{
   Title: string;
   Content: BlocksContent;
-  createdAt: string;
-  updatedAt: string;
-  publishedAt: string;
   locale: Locale;
+
+  publishedAt: string;
+}>;
+
+export type IProgram = StrapiResponse<{
+  Title: string;
+  Description: BlocksContent;
+  Cover: { data: FileObject };
+  Files: { data: FileObject[] };
 }>;

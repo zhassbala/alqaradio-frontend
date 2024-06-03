@@ -1,4 +1,4 @@
-import { formatDate } from "@/helpers/date";
+import { capitalize, formatDate, shorten } from "@/helpers";
 import { getImagePath } from "@/helpers/getImagePath";
 import { IArticle, Locale } from "@/types";
 
@@ -9,12 +9,12 @@ export default async function NewsCard(props: IArticle & { locale: Locale; cards
   return (
     <div
       className={`grid gap-4 ${
-        props.cards ? "max-w-[435px] max-h-[435px] bg-white grid-rows-5" : "md:grid-cols-2 md:gap-8"
+        props.cards ? "max-w-[390px] max-h-[435px] bg-white grid-rows-5" : "md:grid-cols-2 md:gap-4"
       }`}
     >
       <Link
         href={`/${props.locale}/articles/${props.attributes.slug}`}
-        className={props.cards ? "row-span-3" : ""}
+        className={props.cards ? "row-span-3" : "h-[160px]"}
       >
         {props.attributes.Cover?.data ? (
           <Image
@@ -33,7 +33,7 @@ export default async function NewsCard(props: IArticle & { locale: Locale; cards
           href={`/${props.locale}/articles/${props.attributes.slug}`}
           className="text-lg font-medium leading-6 mb-2 hover:underline block"
         >
-          {props.attributes.Title}
+          {capitalize(shorten(props.attributes.Title))}
         </Link>
         <p className="text-[grey] text-sm">{formatDate(props.attributes.Date)}</p>
       </div>

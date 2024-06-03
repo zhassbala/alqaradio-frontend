@@ -13,8 +13,8 @@ export default async function Newsfeed({ locale }: Props) {
     limit: 2,
   });
   return (
-    <div className="flex flex-col max-w-full w-[700px] [&>div]:p-4 m-4 bg-[white]">
-      <div className="text-[white] bg-skyblue">
+    <div className="flex flex-col max-w-full w-[700px] [&>div]:p-4 m-4 bg-[white] rounded-xl overflow-hidden">
+      <div className="text-[white] bg-yellow-main">
         <h2 className="uppercase text-2xl text-center">{translate("news", locale)}</h2>
       </div>
       {articles.length ? (

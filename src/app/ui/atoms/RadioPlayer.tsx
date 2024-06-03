@@ -1,8 +1,8 @@
 "use client";
 
-import Play from "@/app/ui/atoms/icons/Play";
-import Pause from "@/app/ui/atoms/icons/Pause";
+import { faPause, faPlay } from "@fortawesome/free-solid-svg-icons";
 import { useRef, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface Props {
   className?: string;
@@ -28,7 +28,7 @@ export default function RadioPlayer({ className = "" }: Props) {
         className={`w-14 h-14 md:w-16 md:h-16 cursor-pointer flex items-center justify-center p-4 text-yellow-main ${className}`}
         onClick={togglePlayRadio}
       >
-        {isPlaying ? <Pause /> : <Play />}
+        <FontAwesomeIcon icon={isPlaying ? faPause : faPlay} className="w-full h-full" />
       </div>
       <audio ref={audioElement} src="http://194.39.67.35/radioA" hidden></audio>
     </>

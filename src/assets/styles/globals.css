@@ -17,6 +17,10 @@
 }
 
 body {
+  background-image: url("/static/background.svg");
+  background-position: left;
+  background-size: cover;
+  background-repeat: no-repeat;
   /* color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,

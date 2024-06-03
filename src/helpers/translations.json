@@ -1,11 +1,11 @@
 {
   "about": {
     "en": "About us",
-    "kk": "БІЗ ТУРАЛЫ"
+    "kk": "Біз туралы"
   },
   "mainpage": {
     "en": "Main page",
-    "kk": "БАСТЫ БЕТ"
+    "kk": "Басты бет"
   },
   "products": {
     "en": "Our products",
@@ -21,10 +21,22 @@
   },
   "media_about_us": {
     "en": "Media about us",
-    "kk": "БАҚ БІЗ ТУРАЛЫ"
+    "kk": "БАҚ біз туралы"
   },
   "no_news": {
     "en": "There are no news",
     "kk": "Жаңалық жоқ"
+  },
+  "dubbed_by_radioalqa": {
+    "en": "Dubbed by ALQA Radio",
+    "kk": "ALQA Радиосы дыбыстаған еңбектер"
+  },
+  "programs": {
+    "en": "Programs",
+    "kk": "Бағдарламалар"
+  },
+  "": {
+    "en": "",
+    "kk": ""
   }
 }

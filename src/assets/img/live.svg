@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2292" height="1137" viewBox="0 0 2292 1137">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #c32929;
+      }
+
+      .cls-2 {
+        font-size: 37.5px;
+        fill: #fff;
+        font-family: Montserrat;
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+  <rect id="Прямоугольник_скругл._углы_1" data-name="Прямоугольник, скругл. углы 1" class="cls-1" x="198" y="185" width="1882.47" height="763.812" rx="110" ry="110"/>
+  <text id="LIVE" class="cls-2" transform="translate(481.412 765.246) scale(13.96 13.718)">LIVE</text>
+</svg>
