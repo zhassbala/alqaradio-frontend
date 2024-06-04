@@ -9,7 +9,7 @@ export default async function NewsCard(props: IArticle & { locale: Locale; cards
   return (
     <div
       className={`grid gap-4 ${
-        props.cards ? "max-w-[390px] max-h-[435px] bg-white grid-rows-5" : "md:grid-cols-2 md:gap-4"
+        props.cards ? "max-w-[380px] max-h-[435px] bg-white grid-rows-5" : "md:grid-cols-2 md:gap-4"
       }`}
     >
       <Link
