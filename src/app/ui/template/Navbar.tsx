@@ -38,6 +38,10 @@ export default function Navbar({ locale, className = "", isHeader = true }: Prop
           href: `/${locale}/about/media`,
           label: translate("media_about_us", locale),
         },
+        {
+          href: `/${locale}/team`,
+          label: translate("team", locale),
+        },
       ],
     },
     {

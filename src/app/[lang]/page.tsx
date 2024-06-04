@@ -4,12 +4,8 @@ import Image from "next/image";
 import Newsfeed from "@/app/ui/organisms/Newsfeed";
 import RadioPlayer from "@/app/ui/atoms/RadioPlayer";
 
-import TeamBlock from "../ui/organisms/TeamBlock";
-
 import logo from "@/assets/img/logo.png";
 import liveImg from "@/assets/img/live.svg";
-import { translate } from "@/helpers";
-import { team } from "@/static/team";
 
 export default async function Home({ params }: Page) {
   return (
@@ -30,7 +26,6 @@ export default async function Home({ params }: Page) {
         </div>
         <Newsfeed locale={params.lang} />
       </div>
-      <TeamBlock items={team} locale={params.lang} title={translate("team", params.lang)} withIcon />
     </>
   );
 }
