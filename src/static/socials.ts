@@ -1,39 +1,39 @@
-import image1 from "@/assets/img/icons-01.svg";
-import image2 from "@/assets/img/icons-02.svg";
-import image3 from "@/assets/img/icons-03.svg";
-import image4 from "@/assets/img/icons-04.svg";
-import image5 from "@/assets/img/icons-05.svg";
-import image6 from "@/assets/img/icons-06.svg";
+import facebook from "@/assets/img/socials/facebook.svg";
+import inst from "@/assets/img/socials/inst.svg";
+import telegram from "@/assets/img/socials/telegram.svg";
+import tiktok from "@/assets/img/socials/tiktok.svg";
+import whatsapp from "@/assets/img/socials/whatsapp.svg";
+import youtube from "@/assets/img/socials/youtube.svg";
 
 export const socials = [
   {
-    src: image1,
-    href: "https://youtube.com",
-    alt: "Youtube",
+    src: facebook,
+    href: "https://www.facebook.com/alqaradio.kz",
+    alt: "facebook",
   },
   {
-    src: image2,
-    href: "https://youtube.com",
-    alt: "Youtube",
+    src: inst,
+    href: "https://www.instagram.com/alqaradio.kz",
+    alt: "inst",
   },
   {
-    src: image3,
-    href: "https://youtube.com",
-    alt: "Youtube",
+    src: telegram,
+    href: "https://t.me/alqaradiokz",
+    alt: "telegram",
   },
   {
-    src: image4,
-    href: "https://youtube.com",
-    alt: "Youtube",
+    src: tiktok,
+    href: "https://www.tiktok.com/@alqarado.kz",
+    alt: "tiktok",
   },
   {
-    src: image5,
-    href: "https://youtube.com",
-    alt: "Youtube",
+    src: whatsapp,
+    href: "https://api.whatsapp.com/send?phone=77752684949",
+    alt: "whatsapp",
   },
   {
-    src: image6,
-    href: "https://youtube.com",
-    alt: "Youtube",
+    src: youtube,
+    href: "https://www.youtube.com/@ALQAradiosy",
+    alt: "youtube",
   },
 ];
