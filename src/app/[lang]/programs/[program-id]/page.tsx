@@ -26,7 +26,7 @@ export default async function ({ params }: Page<{ "program-id": string }>) {
           </div>
         </div>
         <div className="grid md:grid-cols-2 gap-8">
-          {program.attributes.Files.data.map((el) => (
+          {program.attributes.Files.data?.map((el) => (
             <div key={el.id}>
               <p>{capitalize(el.attributes.name)}</p>
               <audio controls className="w-full">

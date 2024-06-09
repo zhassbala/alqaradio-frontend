@@ -78,5 +78,5 @@ export type IProgram = StrapiResponse<{
   Title: string;
   Description: BlocksContent;
   Cover: { data: FileObject };
-  Files: { data: FileObject[] };
+  Files: { data?: FileObject[] };
 }>;
