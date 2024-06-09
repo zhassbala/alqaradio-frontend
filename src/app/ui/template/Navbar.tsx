@@ -44,10 +44,10 @@ export default function Navbar({ locale, className = "", isHeader = true }: Prop
         },
       ],
     },
-    {
-      href: `/${locale}/products`,
-      label: translate("products", locale),
-    },
+    // {
+    //   href: `/${locale}/products`,
+    //   label: translate("products", locale),
+    // },
     {
       href: `/${locale}/articles`,
       label: translate("news", locale),
