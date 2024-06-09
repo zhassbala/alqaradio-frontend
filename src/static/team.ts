@@ -2,7 +2,7 @@ import { TeamMember } from "@/types";
 import adilAhmet from "@/assets/img/team/Adil-Ahmet.jpg";
 import sarsengali from "@/assets/img/team/Sarsengali.jpg";
 import seitman from "@/assets/img/team/Seitman.jpg";
-import akbota from "@/assets/img/team/Akbota.jpg";
+import akbota from "@/assets/img/team/Akbota-2.jpg";
 import bauyrzhan from "@/assets/img/team/Bauyrjan.jpg";
 
 export const team: TeamMember[] = [
