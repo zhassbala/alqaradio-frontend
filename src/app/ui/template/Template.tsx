@@ -9,7 +9,7 @@ import "@/assets/styles/globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Radio Azan",
+  title: "ALQA Radio",
   description: "ALQA RADIOSY-ның сайты",
   icons: {
     icon: "/static/icon.svg",
