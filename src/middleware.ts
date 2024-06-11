@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { defaultLocale, locales } from "@/locales";
 
 // Get the preferred locale, similar to the above or using a library
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function getLocale(request: NextRequest) {
   // const preferredLanguages = request.headers
   //   .get("Accept-Language")
@@ -21,6 +22,7 @@ export function middleware(request: NextRequest) {
   );
 
   if (pathnameHasLocale || pathname.startsWith("/static/")) return;
+  if (/\.(png|jpg|jpeg|xml|txt)$/gm.test(pathname)) return;
 
   // // Redirect if there is no locale
   const locale = getLocale(request);

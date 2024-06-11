@@ -14,6 +14,32 @@ export const metadata: Metadata = {
   icons: {
     icon: "/static/icon.svg",
   },
+  keywords: [
+    "Alqa radiosy",
+    "Alqa radio",
+    "alqaradio.kz",
+    "Алка радио",
+    "Алка радиосы",
+    "Alqa",
+    "Алка",
+    "Алқа",
+    "Алқа радиосы",
+    "Алқа радио",
+    "Алқа",
+    "Алқарадио",
+    "Алқарадиокз",
+    "Радио",
+    "ALQA",
+    "ALQARadio",
+    "ALQAradiokz",
+  ],
+  openGraph: {
+    url: process.env.PUBLIC_URL,
+    type: "website",
+    images: "/static/icon.png",
+    description: "ALQA RADIOSY-ның сайты",
+    siteName: "ALQA Radio",
+  },
 };
 
 export default function Template({
