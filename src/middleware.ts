@@ -21,7 +21,7 @@ export function middleware(request: NextRequest) {
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   );
 
-  if (pathnameHasLocale || pathname.startsWith("/static/")) return;
+  if (pathnameHasLocale || pathname.startsWith("/static/") || pathname.startsWith("/api/")) return;
   if (/\.(png|jpg|jpeg|xml|txt)$/gm.test(pathname)) return;
 
   // // Redirect if there is no locale
