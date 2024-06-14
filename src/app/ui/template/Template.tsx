@@ -11,6 +11,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "ALQA Radio",
   description: "ALQA RADIOSY-ның сайты",
+  metadataBase: process.env.PUBLIC_URL ? new URL(process.env.PUBLIC_URL) : null,
   icons: {
     icon: "/static/icon.svg",
   },

@@ -11,16 +11,22 @@ interface Props {
 export default function RadioPlayer({ className = "" }: Props) {
   const audioElement = useRef<HTMLAudioElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const play = () => {
+    audioElement.current
+      ?.play()
+      .then(() => setIsPlaying(true))
+      .catch((err) => console.log(err));
+  };
+  const pause = () => {
+    if (!audioElement.current) return;
+    audioElement.current.pause();
+    setIsPlaying(false);
+  };
   const togglePlayRadio = () => {
     const audio = audioElement.current;
     if (!audio) return;
-    else if (audio.paused) {
-      setIsPlaying(true);
-      audio.play();
-    } else {
-      setIsPlaying(false);
-      audio?.pause();
-    }
+    else if (audio.paused) play();
+    else pause();
   };
   return (
     <>
@@ -30,7 +36,7 @@ export default function RadioPlayer({ className = "" }: Props) {
       >
         <FontAwesomeIcon icon={isPlaying ? faPause : faPlay} className="w-full h-full text-red-600" />
       </div>
-      <audio ref={audioElement} src="/api/broadcast" hidden></audio>
+      <audio ref={audioElement} src="/api/broadcast" autoPlay></audio>
     </>
   );
 }
