@@ -15,7 +15,7 @@ export default function Header({ locale, className = "" }: Props) {
       href={"/" + locale}
       className={`w-[80px] h-[80px] flex items-center justify-center ${className}`}
     >
-      <Image src={logo} alt="Radio Azan" className="max-w-full max-h-full" />
+      <Image src={logo} alt="Radio Azan" className="max-w-full max-h-full" loading="eager" />
     </Link>
   );
 }

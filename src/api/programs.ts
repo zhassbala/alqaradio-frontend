@@ -1,10 +1,15 @@
 import { IProgram, IResponse } from "@/types";
 import { api } from "./api";
+import { defaultLocale } from "@/locales";
 
-export const getProgram = async (programId: number | string): Promise<IResponse<IProgram>> => {
+export const getProgram = async (
+  programId: number | string,
+  locale = defaultLocale
+): Promise<IResponse<IProgram>> => {
   try {
     const { data } = await api.get("/programs/" + programId, {
       params: {
+        locale,
         populate: "*",
       },
     });
@@ -15,9 +20,10 @@ export const getProgram = async (programId: number | string): Promise<IResponse<
   }
 };
 
-export const getPrograms = async (): Promise<IResponse<IProgram[]>> => {
+export const getPrograms = async (locale = defaultLocale): Promise<IResponse<IProgram[]>> => {
   const { data } = await api.get("/programs", {
     params: {
+      locale,
       populate: "*",
     },
   });

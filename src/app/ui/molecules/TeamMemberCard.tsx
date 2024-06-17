@@ -1,11 +1,12 @@
-import { Locale, TeamMember } from "@/types";
+import { getImagePath } from "@/helpers";
+import { Locale, ITeamMember } from "@/types";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import Image from "next/image";
 
 interface Props {
-  item: TeamMember;
+  item: ITeamMember;
   locale: Locale;
   className?: string;
 }
@@ -13,9 +14,9 @@ interface Props {
 export default function ({ item, className = "" }: Props) {
   return (
     <div className={`flex flex-col gap-4 text-center ${className} max-w-[260px]`}>
-      {item.avatar ? (
+      {item.attributes.avatar ? (
         <Image
-          src={item.avatar}
+          src={getImagePath(item.attributes.avatar.data.attributes.url)}
           width="200"
           height="200"
           alt=""
@@ -27,8 +28,8 @@ export default function ({ item, className = "" }: Props) {
         </div>
       )}
       <div className="flex flex-col text-sm grow">
-        <p className="text-lg font-medium">{item.fullname}</p>
-        <p className="text-sm text-gray-400">{item.subtitle}</p>
+        <p className="text-lg font-medium">{item.attributes.fullname}</p>
+        <p className="text-sm text-gray-400">{item.attributes.subtitle}</p>
       </div>
     </div>
   );

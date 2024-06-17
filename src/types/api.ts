@@ -80,3 +80,21 @@ export type IProgram = StrapiResponse<{
   Cover: { data: FileObject };
   Files: { data?: FileObject[] };
 }>;
+
+export type IAudioBook = StrapiResponse<{
+  slug: string;
+
+  Title: string;
+  Description?: BlocksContent;
+  Cover?: { data: FileObject };
+  Files?: { data?: FileObject[] };
+
+  locale: Locale;
+}>;
+
+export type ITeamMember = StrapiResponse<{
+  fullname: string;
+  subtitle?: string;
+  avatar: { data: FileObject };
+  locale: Locale;
+}>;

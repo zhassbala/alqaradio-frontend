@@ -53,10 +53,10 @@ export default function Template({
   return (
     <html lang={params.lang}>
       <body className={`${inter.className} bg-gray-light`}>
-        <Header locale={params.lang}></Header>
-        <main className="flex min-h-screen flex-col justify-start md:p-24 max-w-[1600px] mx-auto">
-          {children}
-        </main>
+        <div className="min-h-screen">
+          <Header locale={params.lang}></Header>
+          <main className="flex flex-col justify-start md:p-24 max-w-[1600px] mx-auto">{children}</main>
+        </div>
       </body>
     </html>
   );

@@ -5,9 +5,9 @@ import { Page } from "@/types";
 import ProductsBlock from "@/app/ui/organisms/ProductsBlock";
 
 export default async function Products({ params }: Page) {
-  const { data: programs } = await getPrograms();
+  const { data: programs } = await getPrograms(params.lang);
   return (
-    <div className="max-w-[1280px] px-4 py-8">
+    <div className="max-w-[1280px] px-4 py-8 w-full mx-auto">
       <h1 className="text-3xl md:text-4xl font-medium md:font-semibold uppercase mb-8 text-center">
         {translate("products", params.lang)}
       </h1>

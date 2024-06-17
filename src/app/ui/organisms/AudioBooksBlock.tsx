@@ -1,11 +1,11 @@
-import { Locale, ITeamMember } from "@/types";
+import { IAudioBook, Locale } from "@/types";
 
-import TeamMemberCard from "../molecules/TeamMemberCard";
+import AudioBookCard from "@/app/ui/molecules/AudioBookCard";
 import Image from "next/image";
 
 interface Props {
   locale: Locale;
-  items: ITeamMember[];
+  items: IAudioBook[];
   className?: string;
   title?: string;
   withIcon?: boolean;
@@ -23,9 +23,14 @@ export default function ({ locale, className = "", items, title, withIcon }: Pro
           )}
         </div>
       )}
-      <div className="flex flex-wrap justify-center gap-8">
+      <div className="grid">
         {items.map((el, index) => (
-          <TeamMemberCard item={el} locale={locale} key={index} />
+          <AudioBookCard
+            item={el}
+            locale={locale}
+            key={el.id}
+            className={index !== items.length - 1 ? "border-b-2 border-gray-300 mb-8 pb-8" : ""}
+          />
         ))}
       </div>
     </div>

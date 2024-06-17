@@ -2,9 +2,13 @@ import NotFound from "@/app/ui/template/NotFound";
 
 import { getAboutUsMediaPage } from "@/api/about-us";
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
+import { Page } from "@/types";
 
-export default async function AboutUsMedia() {
-  const { data: content } = await getAboutUsMediaPage();
+export default async function AboutUsMedia({ params }: Page) {
+  const { data: content } = await getAboutUsMediaPage(params.lang).catch((err) => {
+    console.log(err);
+    return { data: null };
+  });
   if (!content) {
     return <NotFound></NotFound>;
   }

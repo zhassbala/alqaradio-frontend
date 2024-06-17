@@ -16,11 +16,14 @@ export default async function Home({ params }: Page) {
             src={logo}
             alt=""
             className="w-full h-full object-cover shrink-0 absolute top-0 left-0"
+            loading="eager"
+            fetchPriority="high"
           ></Image>
           <Image
             src={liveImg}
             alt=""
             className="absolute left-8 top-8 md:left-12 md:top-12 h-8 w-16"
+            loading="eager"
           ></Image>
           <RadioPlayer className="absolute right-[1.7rem] bottom-[2.2rem] md:right-[2.6rem] md:bottom-[3.2rem]" />
         </div>

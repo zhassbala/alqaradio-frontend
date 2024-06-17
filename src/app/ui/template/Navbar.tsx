@@ -44,10 +44,14 @@ export default function Navbar({ locale, className = "", isHeader = true }: Prop
         },
       ],
     },
-    // {
-    //   href: `/${locale}/products`,
-    //   label: translate("products", locale),
-    // },
+    {
+      href: `/${locale}/programs`,
+      label: translate("programs", locale),
+    },
+    {
+      href: `/${locale}/audio-books`,
+      label: translate("audio-books", locale),
+    },
     {
       href: `/${locale}/articles`,
       label: translate("news", locale),
@@ -72,10 +76,12 @@ export default function Navbar({ locale, className = "", isHeader = true }: Prop
                     })) ?? [],
                 }}
               >
-                <div>
+                <div className="flex items-center">
                   <Link
                     href={link.href}
-                    className={`hover:border-b border-white ${pathname === link.href && "border-b"}`}
+                    className={`hover:border-b border-white block h-[1.5rem] ${
+                      pathname === link.href && "border-b"
+                    }`}
                   >
                     {link.label}
                   </Link>

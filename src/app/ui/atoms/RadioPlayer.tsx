@@ -36,7 +36,7 @@ export default function RadioPlayer({ className = "" }: Props) {
       >
         <FontAwesomeIcon icon={isPlaying ? faPause : faPlay} className="w-full h-full text-red-600" />
       </div>
-      <audio ref={audioElement} src="/api/broadcast" autoPlay></audio>
+      <audio ref={audioElement} src="/api/broadcast"></audio>
     </>
   );
 }
