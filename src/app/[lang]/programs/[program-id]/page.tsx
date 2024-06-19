@@ -12,12 +12,14 @@ export default async function ({ params }: Page<{ "program-id": string }>) {
     return (
       <div className="bg-white rounded-xl p-8 shadow-lg">
         <div className="grid md:grid-cols-2 gap-8 mb-8">
-          <Image
-            src={getImagePath(program.attributes.Cover.data.attributes.url)}
-            width={program.attributes.Cover.data.attributes.width}
-            height={program.attributes.Cover.data.attributes.height}
-            alt={program.attributes.Cover.data.attributes.alternativeText ?? ""}
-          />
+          {program.attributes.Cover.data && (
+            <Image
+              src={getImagePath(program.attributes.Cover.data.attributes.url)}
+              width={program.attributes.Cover.data.attributes.width}
+              height={program.attributes.Cover.data.attributes.height}
+              alt={program.attributes.Cover.data.attributes.alternativeText ?? ""}
+            />
+          )}
           <div>
             <h1 className="text-3xl font-semibold uppercase text-yellow-main mb-8">
               {program.attributes.Title}
