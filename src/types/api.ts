@@ -77,7 +77,7 @@ export type IAboutUsPage = StrapiResponse<{
 export type IProgram = StrapiResponse<{
   Title: string;
   Description: BlocksContent;
-  Cover: { data: FileObject };
+  Cover: { data?: FileObject };
   Files: { data?: FileObject[] };
 }>;
 

@@ -14,7 +14,7 @@ interface Props {
 export default function ({ item, locale = "kk", className = "" }: Props) {
   return (
     <div className={`grid md:flex gap-4 ${className}`}>
-      {item.attributes.Cover && (
+      {item.attributes.Cover?.data && (
         <Image
           src={getImagePath(item.attributes.Cover.data.attributes.url)}
           width={item.attributes.Cover.data.attributes.width}

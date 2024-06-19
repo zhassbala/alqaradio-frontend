@@ -16,8 +16,12 @@ export default async function ({ params }: Page<{ "audio-book-slug": string }>) 
     }
     return (
       <div className="bg-white rounded-xl p-8 shadow-lg">
-        <div className="grid md:grid-cols-2 gap-8 mb-8">
-          {audiobook.attributes.Cover && (
+        <div
+          className={`grid gap-8 mb-8 ${
+            audiobook.attributes.Cover?.data ? "md:grid-cols-2" : "md:w-[60%] md:mx-auto text-center"
+          }`}
+        >
+          {audiobook.attributes.Cover?.data && (
             <Image
               src={getImagePath(audiobook.attributes.Cover.data.attributes.url)}
               width={audiobook.attributes.Cover.data.attributes.width}
@@ -37,7 +41,7 @@ export default async function ({ params }: Page<{ "audio-book-slug": string }>) 
         <div className="grid md:grid-cols-2 gap-8">
           {audiobook.attributes.Files?.data?.map((el) => (
             <div key={el.id}>
-              <p>{capitalize(el.attributes.name)}</p>
+              <p className="mb-2 text-lg font-medium">{capitalize(el.attributes.name)}</p>
               <audio controls className="w-full">
                 <source src={getImagePath(el.attributes.url)} type={el.attributes.mime} />
               </audio>
