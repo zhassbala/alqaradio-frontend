@@ -12,7 +12,7 @@ export const getArticles = async (
     params: {
       locale,
       populate: "*",
-      sort: "Date",
+      sort: "Date:desc",
       "pagination[start]": 0,
       "pagination[limit]": options.limit,
     },

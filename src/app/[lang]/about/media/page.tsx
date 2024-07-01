@@ -31,17 +31,20 @@ export default async function AboutUsMedia({ params }: Page) {
         {translate("media_about_us", params.lang)}
       </h1>
       <div className="bg-white rounded-xl px-4 py-8 md:px-8 md:py-16 shadow-xl grid grid-cols-2">
-        {data.map((el: any) => (
-          <Card
-            title={el.attributes.title}
-            extra={getMoreBtn(el.attributes.url)}
-            cover={getCover(el.attributes.cover.data)}
-            key={el.attributes.id}
-            hoverable
-          >
-            {el.attributes.description ?? el.attributes.title}
-          </Card>
-        ))}
+        {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          data.map((el: any) => (
+            <Card
+              title={el.attributes.title}
+              extra={getMoreBtn(el.attributes.url)}
+              cover={getCover(el.attributes.cover.data)}
+              key={el.attributes.id}
+              hoverable
+            >
+              {el.attributes.description ?? el.attributes.title}
+            </Card>
+          ))
+        }
       </div>
     </div>
   );

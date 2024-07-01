@@ -1,8 +1,6 @@
 import type { Page } from "@/types";
 
-import TeamBlock from "@/app/ui/organisms/TeamBlock";
-
-import { getImagePath, translate } from "@/helpers";
+import { getImagePath } from "@/helpers";
 import { getTeamMember } from "@/api/team";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -15,7 +13,7 @@ export default async function ({ params }: Page<{ "team-member-slug": string }>)
   } = await getTeamMember(params["team-member-slug"], params.lang);
   return (
     <div className="bg-white rounded-xl shadow-lg p-16">
-      <div className="flex justify-center gap-16">
+      <div className="flex justify-center gap-16 flex-col md:flex-row items-center">
         {teamMember.attributes.avatar.data ? (
           <Image
             src={getImagePath(teamMember.attributes.avatar.data.attributes.url)}

@@ -21,10 +21,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     ...generateLocaleRoutes("", 1),
-    ...generateLocaleRoutes("about", 0.5),
-    ...generateLocaleRoutes("articles", 0.8),
-    ...generateLocaleRoutes("products", 0.8),
-    ...generateLocaleRoutes("programs", 0.8),
-    ...generateLocaleRoutes("team", 0.5),
+    ...generateLocaleRoutes("articles", 0.5),
+    ...generateLocaleRoutes("programs", 0.3),
+    ...generateLocaleRoutes("team", 0.3),
   ];
 }
