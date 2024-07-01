@@ -4,6 +4,7 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import Image from "next/image";
+import Link from "next/link";
 
 interface Props {
   item: ITeamMember;
@@ -11,10 +12,10 @@ interface Props {
   className?: string;
 }
 
-export default function ({ item, className = "" }: Props) {
+export default function ({ item, className = "", locale }: Props) {
   return (
     <div className={`flex flex-col gap-4 text-center ${className} max-w-[260px]`}>
-      {item.attributes.avatar ? (
+      {item.attributes.avatar.data ? (
         <Image
           src={getImagePath(item.attributes.avatar.data.attributes.url)}
           width="200"
@@ -28,7 +29,9 @@ export default function ({ item, className = "" }: Props) {
         </div>
       )}
       <div className="flex flex-col text-sm grow">
-        <p className="text-lg font-medium">{item.attributes.fullname}</p>
+        <Link href={`/${locale}/team/${item.attributes.slug}`} className="text-lg font-medium">
+          {item.attributes.fullname}
+        </Link>
         <p className="text-sm text-gray-400">{item.attributes.subtitle}</p>
       </div>
     </div>

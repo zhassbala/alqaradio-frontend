@@ -46,15 +46,11 @@ export default function Navbar({ locale, className = "", isHeader = true }: Prop
     },
     {
       href: `/${locale}/programs`,
-      label: translate("programs", locale),
+      label: translate("products", locale),
     },
     {
       href: `/${locale}/audio-books`,
       label: translate("audio-books", locale),
-    },
-    {
-      href: `/${locale}/articles`,
-      label: translate("news", locale),
     },
   ];
   return (

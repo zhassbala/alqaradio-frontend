@@ -5,6 +5,7 @@ import { capitalize, getImagePath } from "@/helpers";
 import Image from "next/image";
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 import NotFound from "@/app/ui/template/NotFound";
+import AudioBookPlayer from "@/app/ui/molecules/AudioBookPlayer";
 
 export default async function ({ params }: Page<{ "audio-book-slug": string }>) {
   try {
@@ -40,12 +41,7 @@ export default async function ({ params }: Page<{ "audio-book-slug": string }>) 
         </div>
         <div className="grid md:grid-cols-2 gap-8">
           {audiobook.attributes.Files?.data?.map((el) => (
-            <div key={el.id}>
-              <p className="mb-2 text-lg font-medium">{capitalize(el.attributes.name)}</p>
-              <audio controls className="w-full">
-                <source src={getImagePath(el.attributes.url)} type={el.attributes.mime} />
-              </audio>
-            </div>
+            <AudioBookPlayer audiobook={el} />
           ))}
         </div>
       </div>

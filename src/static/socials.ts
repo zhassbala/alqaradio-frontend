@@ -28,7 +28,7 @@ export const socials = [
   },
   {
     src: whatsapp,
-    href: "https://api.whatsapp.com/send?phone=77752684949",
+    href: "https://api.whatsapp.com/send?phone=77477517070",
     alt: "whatsapp",
   },
   {

@@ -95,6 +95,8 @@ export type IAudioBook = StrapiResponse<{
 export type ITeamMember = StrapiResponse<{
   fullname: string;
   subtitle?: string;
-  avatar: { data: FileObject };
+  slug: string;
+  avatar: { data?: FileObject };
+  description?: BlocksContent;
   locale: Locale;
 }>;
