@@ -1,6 +1,6 @@
 import { Page } from "@/types";
 import { getAudioBook } from "@/api/audiobooks";
-import { capitalize, getImagePath } from "@/helpers";
+import { getImagePath } from "@/helpers";
 
 import Image from "next/image";
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
@@ -41,7 +41,7 @@ export default async function ({ params }: Page<{ "audio-book-slug": string }>) 
         </div>
         <div className="grid md:grid-cols-2 gap-8">
           {audiobook.attributes.Files?.data?.map((el) => (
-            <AudioBookPlayer audiobook={el} />
+            <AudioBookPlayer audiobook={el} key={el.id} />
           ))}
         </div>
       </div>

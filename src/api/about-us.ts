@@ -18,6 +18,5 @@ export const getAboutUsMediaPage = async (locale = defaultLocale): Promise<{ dat
       populate: "*",
     },
   });
-  console.log(data);
   return data;
 };
