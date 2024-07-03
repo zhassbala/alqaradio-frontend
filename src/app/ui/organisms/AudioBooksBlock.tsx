@@ -1,6 +1,6 @@
 import { IAudioBook, Locale } from "@/types";
 
-import AudioBookCard from "@/app/ui/molecules/AudioBookCard";
+import ListCard from "@/app/ui/molecules/ListCard";
 import Image from "next/image";
 
 interface Props {
@@ -25,11 +25,11 @@ export default function ({ locale, className = "", items, title, withIcon }: Pro
       )}
       <div className="grid">
         {items.map((el, index) => (
-          <AudioBookCard
+          <ListCard
             item={el}
-            locale={locale}
             key={el.id}
             className={index !== items.length - 1 ? "border-b-2 border-gray-300 mb-8 pb-8" : ""}
+            href={`/${locale}/audio-books/${el.attributes.slug}`}
           />
         ))}
       </div>

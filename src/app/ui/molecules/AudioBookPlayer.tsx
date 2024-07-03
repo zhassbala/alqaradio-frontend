@@ -35,9 +35,11 @@ export default function ({ audiobook }: { audiobook: FileObject }) {
       >
         <FontAwesomeIcon icon={isPlaying ? faPause : faPlay} className="w-full h-full text-red-600" />
       </div>
-      <div>
+      <div className="flex flex-col justify-center">
         <p className="mb-2 text-lg font-medium">{capitalize(audiobook.attributes.name)}</p>
-        <p className="mb-2 text-sm text-[gray]">{capitalize(audiobook.attributes.caption)}</p>
+        {audiobook.attributes.caption && (
+          <p className="mb-2 text-sm text-[gray]">{capitalize(audiobook.attributes.caption)}</p>
+        )}
       </div>
       <audio className="w-full" ref={audioElement}>
         <source src={getImagePath(audiobook.attributes.url)} type={audiobook.attributes.mime} />

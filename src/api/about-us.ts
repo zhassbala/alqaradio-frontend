@@ -1,4 +1,4 @@
-import { IAboutUsPage } from "@/types";
+import { IAboutUsPage, IMediaAboutUs } from "@/types";
 import { api } from "./api";
 import { defaultLocale } from "@/locales";
 
@@ -11,7 +11,9 @@ export const getAboutUsPage = async (locale = defaultLocale): Promise<{ data: IA
   return data;
 };
 
-export const getAboutUsMediaPage = async (locale = defaultLocale): Promise<{ data: any }> => {
+export const getAboutUsMediaPage = async (
+  locale = defaultLocale
+): Promise<{ data: IMediaAboutUs[] }> => {
   const { data } = await api.get("/media-about-uses", {
     params: {
       locale,

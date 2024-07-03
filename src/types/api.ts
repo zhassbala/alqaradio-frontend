@@ -86,8 +86,8 @@ export type IAudioBook = StrapiResponse<{
 
   Title: string;
   Description?: BlocksContent;
-  Cover?: { data: FileObject };
-  Files?: { data?: FileObject[] };
+  Cover: { data?: FileObject };
+  Files: { data?: FileObject[] };
 
   locale: Locale;
 }>;
@@ -98,5 +98,14 @@ export type ITeamMember = StrapiResponse<{
   slug: string;
   avatar: { data?: FileObject };
   description?: BlocksContent;
+  locale: Locale;
+}>;
+
+export type IMediaAboutUs = StrapiResponse<{
+  Title: string;
+  Description: string;
+  url: string;
+  Cover: { data?: FileObject };
+
   locale: Locale;
 }>;

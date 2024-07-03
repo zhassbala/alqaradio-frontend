@@ -1,20 +1,29 @@
 import { getImagePath } from "@/helpers";
-import { IProgram, Locale } from "@/types";
+import { FileObject } from "@/types";
 
 import Image from "next/image";
 import Link from "next/link";
-import { BlocksRenderer } from "@strapi/blocks-react-renderer";
+import { BlocksContent, BlocksRenderer } from "@strapi/blocks-react-renderer";
 
 interface Props {
-  item: IProgram;
-  locale: Locale;
+  item: {
+    attributes: {
+      Cover: {
+        data?: FileObject;
+      };
+      Title: string;
+      Description?: BlocksContent | string;
+    };
+  };
+  href: string;
+  target?: string;
   className?: string;
 }
 
-export default function ({ item, locale = "kk", className = "" }: Props) {
+export default function ({ item, className = "", href, target = "_self" }: Props) {
   return (
     <div className={`grid md:flex gap-4 ${className}`}>
-      {item.attributes.Cover.data && (
+      {item.attributes.Cover?.data && (
         <Image
           src={getImagePath(item.attributes.Cover.data.attributes.url)}
           width={item.attributes.Cover.data.attributes.width}
@@ -26,13 +35,19 @@ export default function ({ item, locale = "kk", className = "" }: Props) {
       <div className="grid text-sm">
         <span>
           <Link
-            href={`/${locale}/programs/${item.id}`}
+            href={href}
+            target={target}
             className="font-semibold text-xl hover:underline text-black mb-4 md:mb-2 inline-block"
           >
             {item.attributes.Title}
           </Link>
         </span>
-        <BlocksRenderer content={item.attributes.Description} />
+        {item.attributes.Description &&
+          (typeof item.attributes.Description === "string" ? (
+            <p>{item.attributes.Description}</p>
+          ) : (
+            <BlocksRenderer content={item.attributes.Description} />
+          ))}
       </div>
     </div>
   );

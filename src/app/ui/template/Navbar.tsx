@@ -35,14 +35,14 @@ export default function Navbar({ locale, className = "", isHeader = true }: Prop
       label: translate("about", locale),
       children: [
         {
-          href: `/${locale}/about/media`,
-          label: translate("media_about_us", locale),
-        },
-        {
           href: `/${locale}/team`,
           label: translate("team", locale),
         },
       ],
+    },
+    {
+      href: `/${locale}/about/media`,
+      label: translate("media_about_us", locale),
     },
     {
       href: `/${locale}/programs`,
