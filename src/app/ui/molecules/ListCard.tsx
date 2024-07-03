@@ -23,7 +23,7 @@ interface Props {
 export default function ({ item, className = "", href, target = "_self" }: Props) {
   return (
     <div className={`grid md:flex gap-4 ${className}`}>
-      {item.attributes.Cover?.data && (
+      {item.attributes.Cover?.data ? (
         <Image
           src={getImagePath(item.attributes.Cover.data.attributes.url)}
           width={item.attributes.Cover.data.attributes.width}
@@ -31,6 +31,8 @@ export default function ({ item, className = "", href, target = "_self" }: Props
           alt=""
           className="md:w-[250px] md:h-[170px] base-[220px] object-cover"
         />
+      ) : (
+        <div className="md:w-[250px] h-[170px] base-[220px] bg-gray-200"></div>
       )}
       <div className="grid text-sm">
         <span>
