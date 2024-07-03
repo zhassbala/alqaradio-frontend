@@ -1,4 +1,4 @@
-import { getImagePath } from "@/helpers";
+import { getImagePath, translate } from "@/helpers";
 import { FileObject } from "@/types";
 
 import Image from "next/image";
@@ -44,12 +44,20 @@ export default function ({ item, className = "", href, target = "_self" }: Props
             {item.attributes.Title}
           </Link>
         </span>
-        {item.attributes.Description &&
+        {target === "_blank" ? (
+          <div>
+            <a href={href} target="_blank" className="text-blue-600 underline">
+              {translate("more")} {">>"}
+            </a>
+          </div>
+        ) : (
+          item.attributes.Description &&
           (typeof item.attributes.Description === "string" ? (
             <p>{item.attributes.Description}</p>
           ) : (
             <BlocksRenderer content={item.attributes.Description} />
-          ))}
+          ))
+        )}
       </div>
     </div>
   );

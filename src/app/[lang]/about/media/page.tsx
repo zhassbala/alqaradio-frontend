@@ -21,7 +21,7 @@ export default async function AboutUsMedia({ params }: Page) {
             href={el.attributes.url}
             target="_blank"
             key={el.id}
-            className="border-b-2 border-gray-300 md:border-none pb-6 md:pb-0 last:border-none"
+            className="border-b-2 border-gray-300 md:border-none pb-6 md:pb-0 last:border-none first:[&>*]:rounded-xl"
           />
         ))}
       </div>
