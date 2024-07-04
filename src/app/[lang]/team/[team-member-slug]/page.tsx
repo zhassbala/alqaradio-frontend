@@ -13,7 +13,7 @@ export default async function ({ params }: Page<{ "team-member-slug": string }>)
   } = await getTeamMember(params["team-member-slug"], params.lang);
   return (
     <div className="bg-white rounded-xl shadow-lg p-16">
-      <div className="flex justify-center gap-16 flex-col md:flex-row items-center">
+      <div className="flex justify-center gap-16 flex-col md:flex-row items-start">
         {teamMember.attributes.avatar.data ? (
           <Image
             src={getImagePath(teamMember.attributes.avatar.data.attributes.url)}

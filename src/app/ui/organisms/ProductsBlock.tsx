@@ -1,28 +1,16 @@
 import { IProgram, Locale } from "@/types";
 
 import ListCard from "@/app/ui/molecules/ListCard";
-import Image from "next/image";
+import ListWrapper from "@/app/ui/molecules/ListWrapper";
 
 interface Props {
   locale: Locale;
   items: IProgram[];
-  className?: string;
-  title?: string;
-  withIcon?: boolean;
 }
 
-export default function ({ locale, className = "", items, title, withIcon }: Props) {
+export default function ({ locale, items }: Props) {
   return (
-    <div className={`bg-white rounded-xl shadow-lg p-8 ${className}`}>
-      {title && (
-        <div className="mb-6">
-          <h1 className="text-yellow-main font-semibold uppercase text-center text-2xl ">{title}</h1>
-
-          {withIcon && (
-            <Image src="/static/icon.svg" alt="" width="56" height="56" className="mx-auto"></Image>
-          )}
-        </div>
-      )}
+    <ListWrapper>
       <div className="grid">
         {items.map((el, index) => (
           <ListCard
@@ -33,6 +21,6 @@ export default function ({ locale, className = "", items, title, withIcon }: Pro
           />
         ))}
       </div>
-    </div>
+    </ListWrapper>
   );
 }

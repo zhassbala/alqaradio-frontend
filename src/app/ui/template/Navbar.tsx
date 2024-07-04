@@ -52,6 +52,10 @@ export default function Navbar({ locale, className = "", isHeader = true }: Prop
       href: `/${locale}/audio-books`,
       label: translate("audio-books", locale),
     },
+    {
+      href: `/${locale}/afisha`,
+      label: translate("afisha", locale),
+    },
   ];
   return (
     <ul className={`grow flex gap-4 items-center justify-start ${className}`}>

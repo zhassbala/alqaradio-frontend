@@ -81,6 +81,11 @@ export type IProgram = StrapiResponse<{
   Files: { data?: FileObject[] };
 }>;
 
+export type IAfisha = StrapiResponse<{
+  Title: string;
+  Cover: { data?: FileObject };
+}>;
+
 export type IAudioBook = StrapiResponse<{
   slug: string;
 
