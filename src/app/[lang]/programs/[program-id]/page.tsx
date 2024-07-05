@@ -45,7 +45,7 @@ export default async function ({ params }: Page<{ "program-id": string }>) {
                 item={el}
                 href={el.attributes.url}
                 key={el.id}
-                className="md:h-[112px] md:[&>*]:w-[200px]"
+                className="md:!h-[112px] md:[&>*]:!w-[200px]"
                 target="_blank"
                 isSection
               />
