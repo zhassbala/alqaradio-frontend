@@ -1,16 +1,11 @@
 export const getImageDomain = () => {
-  let domain = process.env.IMAGE_DOMAIN;
+  let domain = process.env.NEXT_PUBLIC_IMAGE_DOMAIN;
   if (domain?.endsWith("/")) domain = domain.slice(0, domain.length - 1);
   const splittedBaseUrl = process.env.BASE_URL?.split("/");
   return (
     domain ??
     splittedBaseUrl
-      ?.slice(
-        0,
-        splittedBaseUrl.length > 3
-          ? splittedBaseUrl.length - 1
-          : splittedBaseUrl.length
-      )
+      ?.slice(0, splittedBaseUrl.length > 3 ? splittedBaseUrl.length - 1 : splittedBaseUrl.length)
       .join("/") ??
     ""
   );

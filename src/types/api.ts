@@ -74,11 +74,18 @@ export type IAboutUsPage = StrapiResponse<{
   publishedAt: string;
 }>;
 
+export type IProgramSection = StrapiResponse<{
+  Title: string;
+  Cover: { data: FileObject };
+  url: string;
+}>;
+
 export type IProgram = StrapiResponse<{
   Title: string;
   Description: BlocksContent;
   Cover: { data?: FileObject };
-  Files: { data?: FileObject[] };
+  sections: { data: IProgramSection[] };
+  url?: string;
 }>;
 
 export type IAfisha = StrapiResponse<{

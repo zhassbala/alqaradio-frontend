@@ -7,7 +7,7 @@ import { Page } from "@/types";
 export default async function ({ params }: Page) {
   const { data: afisha } = await getAfisha(params.lang);
   return (
-    <ListWrapper title={translate("afisha")} withIcon>
+    <ListWrapper title={translate("afisha", params.lang)} withIcon>
       <div className="flex flex-wrap gap-8 justify-center">
         {afisha.map((el) => (
           <AfishaCard cover={el.attributes.Cover} title={el.attributes.Title} key={el.id} />

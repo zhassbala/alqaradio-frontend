@@ -10,7 +10,7 @@ export const getProgram = async (
     const { data } = await api.get("/programs/" + programId, {
       params: {
         locale,
-        populate: "*",
+        populate: "deep",
       },
     });
     return data;
@@ -24,7 +24,7 @@ export const getPrograms = async (locale = defaultLocale): Promise<IResponse<IPr
   const { data } = await api.get("/programs", {
     params: {
       locale,
-      populate: "*",
+      populate: "deep",
     },
   });
   return data;
