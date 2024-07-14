@@ -22,7 +22,7 @@ export function middleware(request: NextRequest) {
   );
 
   if (pathnameHasLocale || pathname.startsWith("/static/") || pathname.startsWith("/api/")) return;
-  if (/\.(png|jpg|jpeg|xml|txt)$/gm.test(pathname)) return;
+  if (/\.(png|jpg|jpeg|xml|txt|pdf)$/gm.test(pathname)) return;
 
   // // Redirect if there is no locale
   const locale = getLocale(request);

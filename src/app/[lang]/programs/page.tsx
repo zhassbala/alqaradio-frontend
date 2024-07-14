@@ -1,10 +1,10 @@
 import { getPrograms } from "@/api/programs";
+import { getAudioBooks } from "@/api/audiobooks";
 import { translate } from "@/helpers/translate";
 import { Page } from "@/types";
 
 import ListWrapper from "@/app/ui/molecules/ListWrapper";
 import GridCard from "@/app/ui/molecules/GridCard";
-import { getAudioBooks } from "@/api/audiobooks";
 import Link from "next/link";
 
 export default async function Products({ params }: Page) {

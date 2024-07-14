@@ -34,10 +34,10 @@ export default function ({ item, className = "", href, target = "_self", isSecti
           width={item.attributes.Cover.data.attributes.width}
           height={item.attributes.Cover.data.attributes.height}
           alt=""
-          className="md:w-[250px] h-[170px] md:h-full base-[220px] object-cover md:rounded"
+          className="md:w-[250px] h-[170px] md:h-full base-[220px] object-cover md:rounded shrink-0"
         />
       ) : (
-        <div className="md:w-[250px] h-[170px] md:h-full base-[220px] bg-gray-200 md:rounded"></div>
+        <div className="md:w-[250px] h-[170px] md:h-full base-[220px] bg-gray-200 md:rounded shrink-0"></div>
       )}
       <div className="grid text-sm p-6 md:p-2 decoration-inherit grow">
         <span className="font-semibold text-xl text-black mb-4 md:mb-2 inline-block decoration-inherit underline">

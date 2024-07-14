@@ -38,11 +38,11 @@ export default function Navbar({ locale, className = "", isHeader = true }: Prop
           href: `/${locale}/team`,
           label: translate("team", locale),
         },
+        {
+          href: "/privacy_policy.pdf",
+          label: translate("privacy_policy", locale),
+        },
       ],
-    },
-    {
-      href: `/${locale}/about/media`,
-      label: translate("media_about_us", locale),
     },
     {
       href: `/${locale}/programs`,
@@ -57,6 +57,10 @@ export default function Navbar({ locale, className = "", isHeader = true }: Prop
           label: translate("audio-books", locale),
         },
       ],
+    },
+    {
+      href: `/${locale}/about/media`,
+      label: translate("media_about_us", locale),
     },
     {
       href: `/${locale}/afisha`,
