@@ -15,7 +15,7 @@ export default async function ({ params }: Page<{ "program-id": string }>) {
       <ListWrapper>
         <div className="grid gap-8">
           <div className="grid md:grid-cols-2 gap-8">
-            {program.attributes.Cover.data && (
+            {program.attributes.Cover?.data && (
               <Image
                 src={getImagePath(program.attributes.Cover.data.attributes.url)}
                 width={program.attributes.Cover.data.attributes.width}
@@ -40,7 +40,7 @@ export default async function ({ params }: Page<{ "program-id": string }>) {
           </div>
           <div className="w-full rounded h-1 bg-yellow-main/80"></div>
           <div className="grid md:grid-cols-2 gap-8">
-            {program.attributes.sections.data?.map((el) => (
+            {program.attributes.sections?.data?.map((el) => (
               <ListCard
                 item={el}
                 href={el.attributes.url}

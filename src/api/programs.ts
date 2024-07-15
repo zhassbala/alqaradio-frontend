@@ -25,7 +25,7 @@ export const getPrograms = async (locale = defaultLocale): Promise<IResponse<IPr
     params: {
       locale,
       populate: "deep",
-      sort: "Date:asc",
+      sort: "Date:desc",
     },
   });
   return data;

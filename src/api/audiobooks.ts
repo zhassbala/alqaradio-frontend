@@ -26,7 +26,7 @@ export const getAudioBooks = async (locale = defaultLocale): Promise<IResponse<I
     params: {
       locale,
       populate: "*",
-      sort: "Date:asc",
+      sort: "Date:desc",
     },
   });
   return data;

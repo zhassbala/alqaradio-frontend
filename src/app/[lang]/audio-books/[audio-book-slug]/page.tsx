@@ -40,7 +40,7 @@ export default async function ({ params }: Page<{ "audio-book-slug": string }>) 
           </div>
         </div>
         <div className="grid md:grid-cols-2 gap-8">
-          {audiobook.attributes.Files?.data?.map((el) => (
+          {audiobook.attributes.Files?.data?.reverse().map((el) => (
             <AudioBookPlayer audiobook={el} key={el.id} />
           ))}
         </div>

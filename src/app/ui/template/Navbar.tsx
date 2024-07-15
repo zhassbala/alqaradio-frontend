@@ -54,7 +54,7 @@ export default function Navbar({ locale, className = "", isHeader = true }: Prop
         },
         {
           href: `/${locale}/audio-books`,
-          label: translate("audio-books", locale),
+          label: translate("dubbed_by_radioalqa", locale),
         },
       ],
     },
