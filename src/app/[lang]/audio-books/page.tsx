@@ -10,17 +10,19 @@ export default async function AudioBooks({ params }: Page) {
   return (
     <div className="max-w-[1280px] px-4 py-8 w-full mx-auto">
       <h1 className="text-3xl md:text-4xl font-medium md:font-semibold uppercase mb-8 text-center">
-        {translate("audio-books", params.lang)}
+        {translate("dubbed_by_radioalqa", params.lang)}
       </h1>
       <ListWrapper>
         <div className="grid">
           {audiobooks.map((el, index) => (
-            <ListCard
-              item={el}
-              key={el.id}
-              className={index !== audiobooks.length - 1 ? "border-b-2 border-gray-300 mb-8 pb-8" : ""}
-              href={`/${params.lang}/audio-books/${el.attributes.slug}`}
-            />
+            <>
+              <ListCard
+                item={el}
+                key={el.id}
+                href={`/${params.lang}/audio-books/${el.attributes.slug}`}
+              />
+              {index !== audiobooks.length - 1 && <div className="h-[2px] bg-slate-200 my-6 rounded" />}
+            </>
           ))}
         </div>
       </ListWrapper>
