@@ -16,7 +16,7 @@ const nextConfig = {
     return [
       {
         source: "/api/broadcast",
-        destination: "http://92.46.109.133:8008/alqa",
+        destination: "http://92.46.109.132:8000/alqa",
       },
     ];
   },
